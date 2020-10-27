@@ -17,3 +17,5 @@ $(document).ready(function () {
 // Team Section Card Effects
 const tilt = $('.js-tilt').tilt()
 tilt.methods.destroy.call(tilt);
+
+

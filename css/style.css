@@ -3,7 +3,8 @@
     --primaryColor: #ce3232;
     --secondaryColor: #757575;
     --grayColor: #c9c9c9;
-    --grayColor-alt: #bfbdbd;
+    --grayColor-1: #bfbdbd;
+    --grayColor-2: #f9f9f9;
     --mainWhite: #fff;
     --mainBlack: #000;
     --mainBlack-alt: #353535;
@@ -68,6 +69,26 @@ img {
     display: block;
     width: 100%;
     object-fit: cover;
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.heading {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    line-height: 4rem;
+    margin-bottom: 1.2rem;
+}
+
+.sub-heading {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--grayColor-1);
+    text-transform: uppercase;
 }
 
 /* End Global */
@@ -180,19 +201,19 @@ img {
 }
 
 
-.owl-dots {
+.header .owl-dots {
     position: absolute;
     top: 70%;
     right: 5rem;
     transform: rotate(90deg);
 }
 
-.owl-dot {
+.header .owl-dot {
     outline: none;
 }
 
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
+.header .owl-theme .owl-dots .owl-dot.active span,
+.header .owl-theme .owl-dots .owl-dot:hover span {
     background: var(--mainWhite);
 }
 
@@ -206,14 +227,14 @@ img {
 }
 
 .about-text {
-    padding: 5rem 8rem 0 0;
+    padding: 5rem 6rem 0 0;
     flex: 0 0 50%;
 }
 
 .about .subtitle {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--grayColor-alt);
+    color: var(--grayColor-1);
     text-transform: uppercase;
 }
 
@@ -223,6 +244,7 @@ img {
     line-height: 4rem;
     letter-spacing: 0.1rem;
     margin: 2rem 0 4rem 0;
+    color: var(--mainBlack);
 }
 
 
@@ -237,24 +259,8 @@ img {
 /* End About */
 
 /* Start Our Team */
-.header-section {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.heading {
-    font-size: 3rem;
-    font-weight: 700;
-    letter-spacing: 0.1rem;
-    line-height: 4rem;
-    margin-bottom: 1.2rem;
-}
-
-.sub-heading {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--grayColor-alt);
-    text-transform: uppercase;
+.our-team {
+    background: var(--grayColor-2);
 }
 
 .team-cards-wrapper {
@@ -325,8 +331,146 @@ img {
 .title {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--grayColor-alt);
+    color: var(--grayColor-1);
     text-transform: uppercase;
 }
 
 /* End Our Team */
+
+
+/* Start Menu */
+.our-menu {
+    padding-bottom: 0;
+}
+.menu-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.menu-item {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+
+.menu-info {
+    position: absolute;
+    left: 0;
+    bottom: -10rem;
+    width: 100%;
+    height: 10rem;
+    background: rgba(0,0,0,0.7);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--mainTransition);
+    overflow: hidden;
+}
+
+.menu-item:hover .menu-info {
+    bottom: 0;
+}
+
+.menu-img {
+    transition: var(--mainTransition);
+}
+.menu-item:hover .menu-img {
+    transform: scale(1.1);
+}
+
+
+.menu-text {
+    color: var(--mainWhite);
+}
+
+.menu-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.menu-price {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--mainWhite);
+}
+/* End Menu */
+
+/* Start Testimonials */
+.testimonials {
+    background: url(../images/testimonial-bg.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.testimonials .heading {
+    color: var(--mainWhite);
+}
+
+.testimonials-content {
+    padding: 5rem 3rem;
+    color: var(--mainWhite);
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.testimonial-item > p {
+    font-size: 2rem;
+    color: var(--grayColor);
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    line-height: 3rem;
+    margin-bottom: 2rem;
+}
+.testimonial-author p {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--grayColor);
+}
+
+.testimonial-author span {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+/* End Testimonials */
+
+/* Start Contact */
+.contact-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-form {
+    width: 45%;
+    align-self: flex-start;
+}
+
+.contact-form .header-section {
+    text-align: left;
+}
+.input-group-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.input-group {
+position: relative;
+}
+.input-label {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-group:nth-child(1) .input-field {
+    flex: 0 0 clac(50% - 2rem);
+}
+
+/* End Contact */
