@@ -32,6 +32,7 @@ body {
     font-weight: 300;
     font-family: 'Montserrat', sans-serif;
     color: var(--mainBlack-alt);
+    overflow-x: hidden;
 }
 
 .section {
@@ -52,7 +53,7 @@ body {
 
 @media (min-width: 576px) and (max-width: 991px) {
     .container {
-        width: 760px;
+        width: 720px;
     }
 }
 
@@ -108,14 +109,12 @@ img {
 /* Start Navigation */
 .nav {
     width: 100%;
-    height: 10rem;
     display: flex;
     align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 999;
-    padding: 2rem 0;
     transition: var(--mainTransition);
 }
 
@@ -123,6 +122,8 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 10rem;
+    position: relative;
 }
 
 .scroll {
@@ -148,6 +149,22 @@ img {
     color: var(--primaryColor);
 }
 
+.toggle-menu {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.menu-close {
+    display: none;
+}
+
+.nav-menu-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 80%;
+}
+
 .nav-menu {
     display: flex;
     flex: 0 0 40%;
@@ -167,8 +184,6 @@ img {
 
 .call-now-wrapper {
     display: flex;
-    align-items: center;
-    flex: 0 0 40%;
     justify-content: flex-end;
     align-items: center;
 }
@@ -185,14 +200,55 @@ img {
         height: auto;
     }
 
+    .nav-menu-wrapper {
+        flex-wrap: wrap;
+    }
+
     .nav-wrapper {
         flex-wrap: wrap;
+        align-items: flex-end;
     }
 
     .call-now-wrapper {
         margin-top: 2rem;
         flex: 0 0 100%;
     }
+}
+
+
+@media (min-width: 576px) and (max-width: 767px) {
+
+    .nav-menu,
+    .call-now-wrapper {
+        display: block;
+    }
+
+    .nav-menu {
+        display: block;
+    }
+
+    .nav-menu-wrapper {
+        display: none;
+        position: absolute;
+        top: 10rem;
+        left: 0;
+        width: 100%;
+        background: var(--mainWhite);
+        text-align: center;
+        padding: 2rem 0;
+        border-top: 1px solid #000;
+        transition: var(--mainTransition);
+    }
+
+    .open .nav-menu-wrapper {
+        display: block;
+    }
+
+
+    .nav-item {
+        margin-bottom: 2rem;
+    }
+
 }
 
 
@@ -403,6 +459,8 @@ img {
     text-transform: uppercase;
 }
 
+
+
 /* End Our Team */
 
 
@@ -469,6 +527,12 @@ img {
     font-size: 2.5rem;
     font-weight: 600;
     color: var(--mainWhite);
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .menu-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* End Menu */
@@ -672,7 +736,6 @@ img {
     color: var(--mainWhite);
     border-radius: 3rem;
     overflow: hidden;
-    flex: 0 0 35%;
 }
 
 .footer-item:nth-child(3) .title {
