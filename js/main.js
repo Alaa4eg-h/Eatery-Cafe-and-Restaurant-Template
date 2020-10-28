@@ -13,7 +13,7 @@
     });
 
     window.addEventListener('resize', function () {
-        if (window.innerWidth < 768) {
+        if (window.scrollY > 10 || window.innerWidth < 768) {
             nav.classList.add('scroll');
         } else {
             nav.classList.remove('scroll');
