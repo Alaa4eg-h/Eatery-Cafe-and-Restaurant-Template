@@ -1,4 +1,16 @@
 
+// Open & Close Menu
+(function () {
+    const nav = document.querySelector('.nav');
+    const toggleMenu = document.querySelector('.toggle-menu');
+
+    // open & Close Menu
+    toggleMenu.addEventListener('click', function () {
+        nav.classList.toggle('open');
+    });
+})();
+
+
 // Navigation on scroll & Resize
 
 (function () {
@@ -9,7 +21,7 @@
             nav.classList.add('scroll');
         } else {
             nav.classList.remove('scroll');
-        };
+        }
     });
 
     window.addEventListener('resize', function () {
@@ -17,7 +29,7 @@
             nav.classList.add('scroll');
         } else {
             nav.classList.remove('scroll');
-        };
+        }
     });
 
     window.addEventListener('load', function () {
@@ -25,23 +37,34 @@
             nav.classList.add('scroll');
         } else {
             nav.classList.remove('scroll');
-        };
+        }
+    });
+})();
+
+// GO TO SECTION SMOOTHLY
+(function () {
+    const navLink = document.querySelectorAll('.nav-link');
+
+    // ADD EVENT TO LINKS
+    navLink.forEach(function (Link) {
+        Link.addEventListener('click', function (e) {
+            e.preventDefault();
+            // Store Href of a clicked link
+            const href = e.target.getAttribute('href');
+            const sectionOffset = document.querySelector(href).offsetTop;
+            const navHeight = document.querySelector('.nav').clientHeight;
+            const nav = document.querySelector('.nav');
+            window.scrollTo({
+                top: sectionOffset - navHeight,
+                behavior: 'smooth'
+            });
+            // Close Menu When Select a link
+            nav.classList.remove('open');
+        });
     });
 })();
 
 
-// Open & Close Menu
-(function () {
-    const nav = document.querySelector('.nav');
-    const toggleMenu = document.querySelector('.toggle-menu');
-
-    toggleMenu.addEventListener('click', function () {
-        nav.classList.toggle('open');
-    })
-
-
-
-})();
 
 
 // Start Owl Crousel
@@ -68,5 +91,5 @@ $(document).ready(function () {
 
 
 // Team Section Card Effects
-const tilt = $('.js-tilt').tilt()
+const tilt = $('.js-tilt').tilt();
 tilt.methods.destroy.call(tilt);
