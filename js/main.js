@@ -4,9 +4,11 @@
     const preloader = document.querySelector('.preloader');
     window.addEventListener('load', function () {
         preloader.style.opacity = '0';
+        preloader.style.display = 'none';
         document.querySelector('body').style.overflowY = 'auto';
     }, 5000);
 })();
+
 
 
 // Open & Close Menu
